@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai Calculator — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Chai Calculator</h1>
+        <p class="muted">Never make watery or weak tea again. Calculate exact Karak Doodh Patti ingredients for your guests.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="guest-count">Number of Chai Cups</label>
+        <input type="number" id="guest-count" class="input" value="4" min="1" max="100">
+      </div>
+
+      <div class="form-group">
+        <label for="chai-style">Tea Style</label>
+        <select id="chai-style" class="input">
+          <option value="karak">Karak Chai (Traditional Lahore café style, 60% milk)</option>
+          <option value="doodh-patti">Pure Doodh Patti (Rich & creamy, 90% milk)</option>
+          <option value="light">Subtle Light Chai (50% water, 50% milk)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sweetness">Sweetness Level</label>
+        <select id="sweetness" class="input">
+          <option value="0">Sugar-free (Phiki)</option>
+          <option value="0.75">Kam Meethi (0.75 tsp per cup)</option>
+          <option value="1.5" selected>Standard (1.5 tsp per cup)</option>
+          <option value="2.5">Tezz Meethi (2.5 tsp per cup)</option>
+        </select>
+      </div>
+
+      <button id="calculate-btn" class="btn">Calculate Recipe</button>
+
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

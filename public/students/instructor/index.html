@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Splitter — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Bill Splitter</h1>
+        <p class="muted">Split food bills, service charges, and tips smoothly among friends.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="bill-amount">Total Bill Amount (PKR)</label>
+        <input type="number" id="bill-amount" class="input" placeholder="e.g. 4800" min="0" step="10">
+      </div>
+
+      <div class="form-group">
+        <label for="num-people">Number of People</label>
+        <input type="number" id="num-people" class="input" value="4" min="1" max="50">
+      </div>
+
+      <div class="form-group">
+        <label for="tip-select">Tip / Service Percentage</label>
+        <select id="tip-select" class="input">
+          <option value="0">0% (No tip)</option>
+          <option value="5">5% (Casual café)</option>
+          <option value="10" selected>10% (Standard service)</option>
+          <option value="15">15% (Great service)</option>
+          <option value="20">20% (Exceptional)</option>
+        </select>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="round-up" checked>
+          <span>Round up each person's share to nearest 10 PKR</span>
+        </label>
+      </div>
+
+      <button id="calculate-btn" class="btn">Calculate Share</button>
+
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

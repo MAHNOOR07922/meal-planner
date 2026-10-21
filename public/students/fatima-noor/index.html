@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat Calculator — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Zakat Calculator</h1>
+        <p class="muted">Accurately calculate your annual 2.5% Zakat obligation in PKR across savings, gold, silver, and business assets.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="cash-amount">Cash in Hand & Bank Accounts (PKR)</label>
+        <input type="number" id="cash-amount" class="input" placeholder="e.g. 250000" min="0" value="300000">
+      </div>
+
+      <div class="form-group">
+        <label for="gold-amount">Value of Gold Owned (PKR)</label>
+        <input type="number" id="gold-amount" class="input" placeholder="e.g. 180000" min="0" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="silver-amount">Value of Silver Owned (PKR)</label>
+        <input type="number" id="silver-amount" class="input" placeholder="e.g. 35000" min="0" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="biz-amount">Trade Inventory / Business Goods Value (PKR)</label>
+        <input type="number" id="biz-amount" class="input" placeholder="e.g. 500000" min="0" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="debt-amount">Short-term Debts & Immediate Bills Owed (Deductible) (PKR)</label>
+        <input type="number" id="debt-amount" class="input" placeholder="e.g. 40000" min="0" value="0">
+      </div>
+
+      <div class="form-group">
+        <label for="nisab-threshold">Current Silver Nisab Threshold (PKR)</label>
+        <input type="number" id="nisab-threshold" class="input" value="135000" min="10000">
+        <span class="muted" style="display:block; margin-top:4px;">Standard Silver Nisab (~612.36g / 52.5 tolas of silver value).</span>
+      </div>
+
+      <button id="calculate-btn" class="btn">Calculate Zakat Due</button>
+
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

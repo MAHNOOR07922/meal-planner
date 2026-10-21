@@ -1,0 +1,85 @@
+name: Check tools.json
+
+on:
+  pull_request:
+    paths:
+      - 'tools.json'
+      - 'students/**'
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Validate tools.json & Student Directories
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate tools.json syntax and schema
+        run: |
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+
+            console.log("Reading tools.json...");
+            let data;
+            try {
+              const raw = fs.readFileSync("tools.json", "utf8");
+              data = JSON.parse(raw);
+            } catch (err) {
+              console.error("::error::tools.json is invalid JSON! Check for missing or misplaced commas:", err.message);
+              process.exit(1);
+            }
+
+            if (!Array.isArray(data)) {
+              console.error("::error::tools.json must be a JSON array at top level [ ... ]");
+              process.exit(1);
+            }
+
+            console.log(`Found ${data.length} tool entries.`);
+            let hasError = false;
+
+            data.forEach((entry, idx) => {
+              const num = idx + 1;
+              if (!entry.name || typeof entry.name !== "string" || !entry.name.trim()) {
+                console.error(`::error::Entry #${num} missing valid "name" field.`);
+                hasError = true;
+              }
+              if (!entry.description || typeof entry.description !== "string" || !entry.description.trim()) {
+                console.error(`::error::Entry #${num} (${entry.name || "unnamed"}) missing valid "description" field.`);
+                hasError = true;
+              }
+              if (!entry.student || typeof entry.student !== "string" || !entry.student.trim()) {
+                console.error(`::error::Entry #${num} (${entry.name || "unnamed"}) missing valid "student" author field.`);
+                hasError = true;
+              }
+              if (!entry.path || typeof entry.path !== "string") {
+                console.error(`::error::Entry #${num} (${entry.name || "unnamed"}) missing "path" field.`);
+                hasError = true;
+              } else {
+                if (!entry.path.startsWith("students/")) {
+                  console.error(`::error::Entry #${num} path must start with "students/". Received: "${entry.path}"`);
+                  hasError = true;
+                }
+                if (!entry.path.endsWith("/")) {
+                  console.error(`::error::Entry #${num} path must end with a trailing slash "/". Received: "${entry.path}"`);
+                  hasError = true;
+                }
+                // Check if directory exists
+                const folderPath = path.join(__dirname, entry.path);
+                if (!fs.existsSync(folderPath)) {
+                  console.error(`::error::Entry #${num} folder does not exist at "${entry.path}". Did you add and commit your folder?`);
+                  hasError = true;
+                }
+              }
+            });
+
+            if (hasError) {
+              console.error("\nValidation failed. Please review errors above.");
+              process.exit(1);
+            }
+
+            console.log("All tools.json entries verified successfully!");
+          '

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rickshaw Fare Estimator — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Rickshaw Fare Estimator</h1>
+        <p class="muted">Estimate realistic CNG auto-rickshaw fares across Lahore before you start bargaining.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="route-preset">Popular Lahore Route Preset (Optional)</label>
+        <select id="route-preset" class="input">
+          <option value="">Custom Distance</option>
+          <option value="3">Liberty Market &harr; MM Alam Road (3 km)</option>
+          <option value="6">Model Town &harr; Packages Mall (6 km)</option>
+          <option value="11">Gulberg III &harr; Badshahi Mosque / Fort (11 km)</option>
+          <option value="15">DHA Phase 5 &harr; Mall Road (15 km)</option>
+          <option value="18">Thokar Niaz Baig &harr; Anarkali Bazaar (18 km)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="distance-km">Distance (Kilometers)</label>
+        <input type="number" id="distance-km" class="input" placeholder="e.g. 8.5" min="0.5" step="0.5" value="7">
+      </div>
+
+      <div class="form-group">
+        <label for="time-period">Time of Day</label>
+        <select id="time-period" class="input">
+          <option value="day">Daytime / Standard Hours</option>
+          <option value="night">Late Night (11:00 PM – 5:30 AM, +25% night rate)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="wait-mins">Waiting Time (Minutes)</label>
+        <input type="number" id="wait-mins" class="input" value="0" min="0" step="5">
+      </div>
+
+      <button id="calculate-btn" class="btn">Estimate Fare</button>
+
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

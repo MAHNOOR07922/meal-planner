@@ -1,0 +1,33 @@
+/* Custom styles for Countdown */
+.countdown-display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 24px 0 16px;
+}
+
+.countdown-slot {
+  background: #fdfaf7;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 8px;
+  text-align: center;
+}
+
+.slot-num {
+  display: block;
+  font-family: var(--font-family-mono);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+.slot-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  margin-top: 4px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TODO: Change title to your tool name -->
+  <title>Tool Name — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Keep this back link so users can easily return to the toolbox home -->
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <!-- TODO: Change heading and description -->
+      <h1>Tool Title</h1>
+      <p class="muted" style="margin-top: 4px; margin-bottom: 24px;">
+        Brief one-line description of what this tool does.
+      </p>
+
+      <!-- TODO: Add your input fields inside .form-group containers -->
+      <div class="form-group">
+        <label for="example-input">First Value</label>
+        <input type="number" id="example-input" class="input" placeholder="e.g. 100">
+      </div>
+
+      <div class="form-group">
+        <label for="second-input">Second Value</label>
+        <input type="number" id="second-input" class="input" placeholder="e.g. 5">
+      </div>
+
+      <button id="calculate-btn" class="btn">Calculate</button>
+
+      <!-- Result element: hidden by default, script will populate and unhide -->
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

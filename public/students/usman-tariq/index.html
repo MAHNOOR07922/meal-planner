@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Bill Estimator — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Electricity Bill Estimator</h1>
+        <p class="muted">Estimate your monthly residential LESCO power bill with slab tariffs, fuel adjustments, and taxes.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="units-consumed">Monthly Electricity Units Consumed (kWh)</label>
+        <input type="number" id="units-consumed" class="input" placeholder="e.g. 320" min="1" max="5000" value="280">
+      </div>
+
+      <div class="form-group">
+        <label for="consumer-category">Consumer Category</label>
+        <select id="consumer-category" class="input">
+          <option value="unprotected" selected>Unprotected Consumer (General Residential)</option>
+          <option value="protected">Protected Lifeline Consumer (&le;200 units for last 6 months)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fpa-rate">Estimated Fuel Price Adjustment (FPA per unit, PKR)</label>
+        <input type="number" id="fpa-rate" class="input" value="3.5" step="0.5">
+      </div>
+
+      <button id="calculate-btn" class="btn">Calculate Estimated Bill</button>
+
+      <div id="result" class="result" hidden></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

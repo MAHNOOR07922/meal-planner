@@ -1,0 +1,10 @@
+[
+  { "name": "Bill Splitter", "description": "Split a restaurant bill, tax, and tip fairly among friends with custom rounding.", "student": "Instructor", "path": "students/instructor/" },
+  { "name": "Chai Calculator", "description": "Work out exact milk, water, Patti tea leaves, and sugar ratios for any number of guests.", "student": "Ayesha Khan", "path": "students/ayesha-khan/" },
+  { "name": "Rickshaw Fare Estimator", "description": "Estimate realistic auto rickshaw fare by distance across Lahore with day/night rates.", "student": "Bilal Ahmed", "path": "students/bilal-ahmed/" },
+  { "name": "Zakat Calculator", "description": "Calculate annual 2.5% Zakat obligation across cash savings, gold, silver and trade assets against current Nisab.", "student": "Fatima Noor", "path": "students/fatima-noor/" },
+  { "name": "Electricity Bill Estimator", "description": "Estimate monthly LESCO electricity bill with slab tariffs, fuel adjustment surcharge, and duties.", "student": "Usman Tariq", "path": "students/usman-tariq/" },
+  { "name": "Countdown to Eid / Any Date", "description": "Live real-time countdown tracker for Eid-ul-Fitr, Eid-ul-Adha, Pakistan Day or custom milestones.", "student": "Zainab Ali", "path": "students/zainab-ali/" },
+  { "name": "Grocery Budget Tracker", "description": "Track bazaar vegetable and kitchen shopping expenses against your target household budget.", "student": "Hamza Sheikh", "path": "students/hamza-sheikh/" },
+  { "name": "BMI Calculator", "description": "Calculate body mass index and healthy weight range for height and weight in metric or imperial units.", "student": "Sara Malik", "path": "students/sara-malik/" }
+]

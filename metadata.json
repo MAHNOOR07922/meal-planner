@@ -1,0 +1,6 @@
+{
+  "name": "Lahore Toolbox",
+  "description": "A shared collection of lightweight web tools built by students of the Lahore web development course, featuring live interactive tools, student workbench, and repo guide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

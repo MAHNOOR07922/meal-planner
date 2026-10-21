@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown to Eid / Any Date — Lahore Toolbox</title>
+  <link rel="stylesheet" href="../../styles/shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to all tools</a>
+
+    <div class="card">
+      <div class="tool-header">
+        <h1>Countdown to Eid / Any Date</h1>
+        <p class="muted">Live real-time countdown tracker for religious celebrations, national holidays, or personal occasions.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="event-preset">Select Milestone or Event</label>
+        <select id="event-preset" class="input">
+          <option value="2027-03-10T00:00:00">Eid-ul-Fitr</option>
+          <option value="2027-05-17T00:00:00">Eid-ul-Adha</option>
+          <option value="2027-08-14T00:00:00">Pakistan Independence Day (14 Aug)</option>
+          <option value="2027-03-23T00:00:00">Pakistan Day (23 March)</option>
+          <option value="custom">Choose Custom Target Date</option>
+        </select>
+      </div>
+
+      <div class="form-group" id="custom-date-group" style="display: none;">
+        <label for="custom-date">Pick Custom Date and Time</label>
+        <input type="datetime-local" id="custom-date" class="input">
+      </div>
+
+      <div class="countdown-display" id="countdown-grid">
+        <div class="countdown-slot">
+          <span class="slot-num" id="days-val">--</span>
+          <span class="slot-label">Days</span>
+        </div>
+        <div class="countdown-slot">
+          <span class="slot-num" id="hours-val">--</span>
+          <span class="slot-label">Hours</span>
+        </div>
+        <div class="countdown-slot">
+          <span class="slot-num" id="mins-val">--</span>
+          <span class="slot-label">Minutes</span>
+        </div>
+        <div class="countdown-slot">
+          <span class="slot-num" id="secs-val">--</span>
+          <span class="slot-label">Seconds</span>
+        </div>
+      </div>
+
+      <div id="countdown-status" class="muted" style="text-align: center; margin-top: 14px;">
+        Tracking live time...
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

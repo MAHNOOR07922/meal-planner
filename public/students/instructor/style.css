@@ -1,0 +1,47 @@
+/* Custom styles for Bill Splitter */
+
+.tool-header {
+  margin-bottom: 24px;
+}
+
+.checkbox-group {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.breakdown-item {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.breakdown-item strong {
+  display: block;
+  font-size: 15px;
+  color: var(--color-text);
+  font-family: var(--font-family-mono);
+}
